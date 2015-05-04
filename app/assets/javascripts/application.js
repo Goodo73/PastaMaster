@@ -15,6 +15,9 @@
 //= require turbolinks
 //= require_tree .
 
+// ------ included api_accessor.js ------
+//= require api_accessor
+
 
 
 // ------ Animation for header ------
@@ -32,3 +35,4 @@ $(document).ready(function() {
   });
 });
 //  ---------------------------------
+
