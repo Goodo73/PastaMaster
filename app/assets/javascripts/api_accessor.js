@@ -1,3 +1,6 @@
+// need to refactor
+// need to add comments
+
 var WEapi = {
   rootUrl: 'http://www.weeatt.com/',
 
@@ -49,11 +52,14 @@ var WEapi = {
     });
   },
 
-  results: {}
+  postData: function() {
+    $.ajax({
+      url: '/api/add',
+      method: "POST",
+      data: WEapi.results,
+      dataType: 'json'
+    });
+  }
 
 };
 
-$(document).ready(function() {
-  // WEapi.runLogin();
-
-});
