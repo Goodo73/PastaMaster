@@ -1,7 +1,7 @@
 @import "bourbon";
 @import "neat";
-/*@import "home";*/
-/*@import "users";*/
+// @import "home";
+// @import "users";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -18,96 +18,9 @@
  *= require_self
  */
 
-.cards {
-  @include display(flex);
-  @include flex-wrap(wrap);
-  @include justify-content(space-between);
-}
 
-.card {
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
-  $base-background-color: white !default;
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $base-link-color: $action-color !default;
-  $dark-gray: #333 !default;
-  $base-font-color: $dark-gray !default;
-  $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-background: lighten($card-border-color, 10%);
-  $card-header-background: $card-background;
-  $card-hover-background: lighten($card-background, 5%);
-  $card-image-background: #DBD199;
-  $card-image-hover-background: lighten($card-image-background, 5%);
-  $card-margin: 1em;
 
-  @include flex-basis(25em);
-  @include flex-grow(3);
-  @include transition (all 0.2s ease-in-out);
-  background-color: $card-background;
-  border-radius: $base-border-radius;
-  border: $card-border;
-  box-shadow: 0 2px 4px darken($base-background-color, 10%);
-  cursor: pointer;
-  margin: 0 $card-margin $base-spacing $card-margin;
-  position: relative;
-
-  .card-image {
-    overflow: hidden;
-    max-height: 150px;
-
-    img {
-      @include transition (all 0.2s ease-in-out);
-      background: $card-image-background;
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      width: 100%;
-    }
-  }
-
-  .card-header {
-    @include transition (all 0.2s ease-in-out);
-    background-color: $card-header-background;
-    border-bottom: $card-border;
-    border-radius: $base-border-radius $base-border-radius 0 0;
-    font-weight: bold;
-    line-height: 1.5em;
-    padding: ($base-spacing / 3) ($base-spacing / 2);
-  }
-
-  .card-copy {
-    font-size: 0.9em;
-    line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
-
-    p {
-      margin: 0 0 ($base-spacing / 2);
-    }
-  }
-  
-  &:focus,
-  &:hover {
-    background-color: $card-hover-background;
-    
-    .card-image img {
-      background: $card-image-hover-background;
-    }
-  
-    .card-header {
-      background-color: $card-hover-background;
-    }
-  }
-
-  &:active {
-    background-color: $card-background;
-
-    .card-header {
-      background-color: $card-background;
-    }
-  }
-}
-
+// ---------------- START OF NAV ---------------------
 
 header.navigation {
   $base-border-color: gainsboro !default;
@@ -135,12 +48,15 @@ header.navigation {
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
+  font-family: helvetica, arial;
 
   .navigation-wrapper {
     @include clearfix;
     @include outer-container;
     position: relative;
     z-index: 9999;
+  }
+  .navigation li {
   }
 
   .logo {
@@ -466,8 +382,105 @@ header.navigation {
 .navigation {
   margin-bottom: 50px;
 }
- 
 
+
+
+// ---------------- START OF DISHES ---------------------
+
+.cards {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
+.card {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $base-link-color: $action-color !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-hover-background: lighten($card-background, 5%);
+  $card-image-background: #DBD199;
+  $card-image-hover-background: lighten($card-image-background, 5%);
+  $card-margin: 1em;
+
+  @include flex-basis(18em);
+  @include flex-grow(3);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
+  border-radius: $base-border-radius;
+  border: $card-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+  font-family: helvetica, arial;
+
+  .card-image {
+    overflow: hidden;
+    max-height: 150px;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      background: $card-image-background;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+  
+  &:focus,
+  &:hover {
+    background-color: $card-hover-background;
+    
+    .card-image img {
+      background: $card-image-hover-background;
+    }
+  
+    .card-header {
+      background-color: $card-hover-background;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
+}
+
+
+ 
+// ------------- START OF FOOTER -------------
 
 
  // Uncomment this for a sticky footer.
@@ -497,7 +510,7 @@ header.navigation {
 // }
 
 .footer-2 {
-  display: inline-block;
+  font-family: helvetica, arial;
   $base-spacing: 1.5em !default;
   $action-color: #477DCA !default;
   $medium-screen: em(640) !default;
@@ -543,6 +556,8 @@ header.navigation {
     font-weight: 800;
     list-style: none;
     padding-right: 1em;
+    display: inline-block;
+
 
     @include media($large-screen) {
       display: inline;
@@ -584,6 +599,7 @@ header.navigation {
         line-height: 0;
         margin: 0;
         padding-right: 0.7em;
+
 
         &:last-child {
           padding-right: 0;
