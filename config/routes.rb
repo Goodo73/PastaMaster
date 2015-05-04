@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users
 
   get '/' => 'recipes#index', :as => :root
+  resources :users
 
 
   # ------ Authentication routes ------
