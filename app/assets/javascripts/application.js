@@ -17,6 +17,7 @@
 
 //= require api_accessor
 //= require search_filters
+//= require recipe_detail
 
 
 
@@ -59,6 +60,18 @@ function cardCopyShow() {
 }
 
 function cardCopySlide() {
+  var state = $(this).children('.card-copy')[0]["style"]["cssText"];
+  var recipeID = $(this)[0]['dataset']['id'];
+  if (state === 'display: block;') {
+    $.ajax({
+      url: '/api/recipes/' + recipeID,
+      dataType: 'json'
+    }).done(function(data){
+      recipeDetail.scroll = $(window).scrollTop();
+      recipeDetail.render(data);
+      recipeDetail.displayDetailed();
+    });
+  }
   $(this).children('.card-copy').slideToggle(300);
 }
 
