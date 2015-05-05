@@ -24,7 +24,7 @@ class ApiController < ApplicationController
       recipe.save
     end
 
-    redirect_to root_path
+    redirect_to root_path # lol this don't work no good
 
   end
 
