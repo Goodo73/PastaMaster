@@ -73,7 +73,44 @@ header.navigation {
 
 // Mobile view
 
-  .navigation-menu-button {
+/*  .navigation-menu-button {
+    cursor: pointer;
+    padding: 10px 35px 16px 0px; 
+
+  .navigation-menu-button span, .navigation-menu-button span:before, .navigation-menu-button span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+  }
+.navigation-menu-button span:before {
+ top: -10px; 
+}
+.navigation-menu-button span:after {
+ bottom: -10px;
+}
+
+.navigation-menu-button span, .navigation-menu-button span:before, .navigation-menu-button span:after {
+ transition: all 500ms ease-in-out;
+}
+.navigation-menu-button.active span {
+ background-color: transparent;
+}
+.navigation-menu-button.active span:before, .navigation-menu-button.active span:after {
+ top: 0;
+}
+.navigation-menu-button.active span:before {
+ transform: rotate(45deg);
+}
+.navigation-menu-button.active span:after {
+ transform: rotate(-45deg);
+}
+*/
+  .navigation-menu-button, .navigation-user-button {
     color: $navigation-color;
     display: block;
     float: right;
@@ -93,7 +130,6 @@ header.navigation {
       color: $navigation-color;
     }
   }
-
   
 // Nav menu
 
