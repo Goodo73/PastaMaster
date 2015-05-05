@@ -56,9 +56,9 @@
       </div>
 
       
-
+   <ul>
       <% if !logged_in? %>
-        <li><%= link_to 'LOG IN', login_path %></li>
+        <a class="sign-up" href=<%= login_path %>>LOGIN</a>
       <% else %>
         <li>
           <%= form_tag("/logout", method: "delete") do %>
@@ -67,12 +67,11 @@
         </li>
       <% end %>
 
-        </ul>
-      </nav>
+       
       <% if logged_in?%>
         <%= "LOGGED IN as " + current_user.email %>
       <% end %>
-
+      </ul>
 
 
   </div>
