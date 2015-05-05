@@ -30,8 +30,7 @@ header.navigation {
   $large-screen: em(860) !default;
   $navigation-padding: 1em;
   $navigation-background: #E51616;
-  $navigation-color: transparentize(white, 0.3);
-  $navigation-color-hover: white;
+  $navigation-color: white;
   $navigation-height: 60px;
   $navigation-nav-button-background: $action-color;
   $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
@@ -90,7 +89,7 @@ header.navigation {
 
     &:focus,
     &:hover {
-      color: $navigation-color-hover;
+      color: $navigation-color;
     }
   }
 
@@ -162,7 +161,7 @@ header.navigation {
 
       &:focus,
       &:hover {
-        color: $navigation-color-hover;
+        color: $navigation-color;
       }
     }
   }
@@ -517,8 +516,7 @@ header.navigation {
   $large-screen: em(860) !default;
   $footer-background: #E51616;  
   $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+  
 
   background: $footer-background;
   padding: $base-spacing;
@@ -553,7 +551,7 @@ header.navigation {
   }
 
   ul li {
-    font-weight: 800;
+    font-weight: 400;
     list-style: none;
     padding-right: 1em;
     display: inline-block;
@@ -566,7 +564,7 @@ header.navigation {
   }
 
   ul li a {
-    color: $footer-link-color;
+    color: $footer-color;
     text-decoration: none;
 
     &:focus,
