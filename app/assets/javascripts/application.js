@@ -36,3 +36,32 @@ $(document).ready(function() {
 });
 //  ---------------------------------
 
+
+// ----------- Dish slide -----------
+function cardCopyHide() {
+  $('.card-copy').hide();
+}
+
+function cardCopyShow() {
+  $('.card-copy').show();
+}
+
+function cardCopySlide() {
+  $(this).children('.card-copy').slideToggle(300);
+}
+
+function windowSizeCheck() {
+  $('.card').off('click', cardCopySlide);
+  if ($(window).width() < 656){
+    cardCopyHide();
+    $('.card').on('click', cardCopySlide);
+  } else {
+    cardCopyShow();
+  }
+}
+
+$('document').ready(function() {
+  windowSizeCheck();
+  $(window).resize(windowSizeCheck);
+});
+// -------------------------------

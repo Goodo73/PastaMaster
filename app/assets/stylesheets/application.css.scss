@@ -448,16 +448,17 @@ header.navigation {
     padding: ($base-spacing / 3) ($base-spacing / 2);
   }
 
-  .card-copy {
-    font-size: 0.9em;
-    line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
+    .card-copy {
+      font-size: 0.9em;
+      line-height: 1.5em;
+      padding: ($base-spacing / 2) ($base-spacing / 2);
 
-    p {
-      margin: 0 0 ($base-spacing / 2);
+      p {
+        margin: 0 0 ($base-spacing / 2);
+      }
+
     }
-  }
-  
+    
   &:focus,
   &:hover {
     background-color: $card-hover-background;
@@ -479,8 +480,6 @@ header.navigation {
     }
   }
 }
-
-
  
 // ------------- START OF FOOTER -------------
 
