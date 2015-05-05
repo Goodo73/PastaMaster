@@ -2,19 +2,16 @@ Rails.application.routes.draw do
 
 
   # ------ Recipes routes ------
-  #/recipes/list             display search results
-  get '/recipes/list'    => 'recipes#listResults'
-  #/recipes/search           process search
-  post '/recipes/search' => 'recipes#search'
-  # add resource for default crud
+  #temporary for working on list view
+  get '/recipe/list' => 'recipes#list'
   resources :recipes
   # ----------------------------
 
-
+  # ------ Users routes ------
   resources :users
+  # --------------------------
 
   get '/' => 'recipes#index', :as => :root
-  resources :users
 
   # ------ Authentication routes ------
   # /session/new       login form

@@ -1,0 +1,38 @@
+<!-- This a temporary file for the display of search results -->
+<!-- will be pushed to index.html.erb when ready -->
+
+<script>
+  var recipes;
+  var getRecipes = function() {
+    $.ajax({
+      url: '/api/recipes/list',
+      dataType: 'json'
+    }).done(function(data){
+      recipes = data;
+    });
+  };
+  var displayRecipes = function() {
+    // filter recipes for unwanted ones
+    $.each(recipes, function(index, recipe) {
+      render(recipe);
+    });
+  };
+  var render = function(recipe) {
+
+    $img = $('<img>').attr('src', recipe['image_url']);
+    $divImg = $('<div>').addClass('card-image').append($img);
+
+    $divHeader = $('<div>').addClass('card-header').append(recipe['title']);
+
+    $p = $('<p>').html(recipe['description']);
+    $divCopy = $('<div>').addClass('card-copy').append($p);
+
+    $divCard = $('<div>').addClass('card');
+    $divCard.append($divImg);
+    $divCard.append($divHeader);
+    $divCard.append($divCopy);
+
+    $('.cards').append($divCard);
+  }
+
+</script>
