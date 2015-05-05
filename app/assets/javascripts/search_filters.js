@@ -44,6 +44,7 @@ var applyFilters = {
     $divCopy = $('<div>').addClass('card-copy').append($p);
 
     $divCard = $('<div>').addClass('card');
+    $divCard.attr('data-id',recipe['id'])
     $divCard.append($divImg);
     $divCard.append($divHeader);
     $divCard.append($divCopy);
