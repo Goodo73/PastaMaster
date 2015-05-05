@@ -55,8 +55,10 @@
             <%= link_to "Sign Up", new_user_path, class: "sign-up"%>
     </div>
 
+  
+
     <% if !logged_in? %>
-      <%= link_to "Log in", login_path, class: "sign-up"%>
+      <%= link_to "Log in", login_path, class: "sign-up" %>
     <% else %>
       <ul>
         <li>
@@ -65,6 +67,7 @@
           <% end %>
         </li>
       </ul>
+
     <% end %>
 
     <% if logged_in?%>
