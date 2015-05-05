@@ -519,12 +519,7 @@ header.navigation {
   $large-screen: em(860) !default;
   $footer-background: #E51616;  
   $footer-color: white;
-<<<<<<< HEAD
-/*  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);*/
-=======
-  
->>>>>>> frontend
+
 
   background: $footer-background;
   padding: $base-spacing;
@@ -559,10 +554,7 @@ header.navigation {
   }
 
   ul li {
-<<<<<<< HEAD
-=======
     font-weight: 400;
->>>>>>> frontend
     list-style: none;
     padding-right: 1em;
     display: inline-block;
@@ -575,11 +567,7 @@ header.navigation {
   }
 
   ul li a {
-<<<<<<< HEAD
-    color: white;
-=======
     color: $footer-color;
->>>>>>> frontend
     text-decoration: none;
 
     &:focus,
