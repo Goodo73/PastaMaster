@@ -24,6 +24,8 @@ class ApiController < ApplicationController
       recipe.save
     end
 
+    redirect_to root_path
+
   end
 
   # supply json search results from DB

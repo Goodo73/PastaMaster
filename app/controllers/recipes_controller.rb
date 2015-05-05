@@ -4,4 +4,12 @@ class RecipesController < ApplicationController
     
   end
 
+  def search
+
+  end
+
+  def listResults
+
+  end
+
 end
