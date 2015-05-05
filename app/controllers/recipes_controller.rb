@@ -4,11 +4,8 @@ class RecipesController < ApplicationController
     
   end
 
-  def search
-
-  end
-
-  def listResults
+  # temporary for working on list view
+  def list
 
   end
 
