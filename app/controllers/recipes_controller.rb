@@ -4,9 +4,4 @@ class RecipesController < ApplicationController
     
   end
 
-  # temporary for working on list view
-  def list
-
-  end
-
 end
