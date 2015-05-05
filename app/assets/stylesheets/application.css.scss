@@ -31,7 +31,7 @@ header.navigation {
   $navigation-padding: 1em;
   $navigation-background: #E51616;
   $navigation-color: transparentize(white, 0.3);
-  $navigation-color-hover: white;
+  $navigation-color: white;
   $navigation-height: 60px;
   $navigation-nav-button-background: $action-color;
   $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
@@ -90,7 +90,7 @@ header.navigation {
 
     &:focus,
     &:hover {
-      color: $navigation-color-hover;
+      color: white;
     }
   }
 
@@ -162,7 +162,7 @@ header.navigation {
 
       &:focus,
       &:hover {
-        color: $navigation-color-hover;
+        color: white;
       }
     }
   }
@@ -292,7 +292,7 @@ header.navigation {
 // Elements on the far right
 
   .navigation-tools {
-    background: #505050;
+    background: #E51616;
     clear: both;
     display: block;
     height: $navigation-height;
@@ -517,8 +517,8 @@ header.navigation {
   $large-screen: em(860) !default;
   $footer-background: #E51616;  
   $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
+/*  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-disclaimer-color: transparentize($footer-color, 0.6);*/
 
   background: $footer-background;
   padding: $base-spacing;
@@ -553,7 +553,6 @@ header.navigation {
   }
 
   ul li {
-    font-weight: 800;
     list-style: none;
     padding-right: 1em;
     display: inline-block;
@@ -566,7 +565,7 @@ header.navigation {
   }
 
   ul li a {
-    color: $footer-link-color;
+    color: white;
     text-decoration: none;
 
     &:focus,
