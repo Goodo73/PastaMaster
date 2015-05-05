@@ -15,9 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
-// ------ included api_accessor.js ------
 //= require api_accessor
-
+//= require search_filters
 
 
 // ------ Animation for header ------
@@ -25,11 +24,23 @@ $(document).ready(function() {
   var menuToggle = $('#js-mobile-menu').unbind();
   $('#js-navigation-menu').removeClass("show");
 
+  var userToggle = $('#js-mobile-user').unbind();
+  $('#js-navigation-user').removeClass("show");
+
   menuToggle.on('click', function(e) {
     e.preventDefault();
     $('#js-navigation-menu').slideToggle(function(){
       if($('#js-navigation-menu').is(':hidden')) {
         $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+
+  userToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-user').slideToggle(function(){
+      if($('#js-navigation-user').is(':hidden')) {
+        $('#js-navigation-user').removeAttr('style');
       }
     });
   });
