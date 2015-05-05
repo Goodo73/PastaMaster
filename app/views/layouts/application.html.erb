@@ -52,26 +52,24 @@
         </form>
 
       </div>
-        <a href="/users/new" class="sign-up">Sign Up  </a>
-      </div>
+            <%= link_to "Sign Up", new_user_path, class: "sign-up"%>
+    </div>
 
-      
-   <ul>
-      <% if !logged_in? %>
-        <a class="sign-up" href=<%= login_path %>>LOGIN</a>
-      <% else %>
+    <% if !logged_in? %>
+      <%= link_to "Log in", login_path, class: "sign-up"%>
+    <% else %>
+      <ul>
         <li>
           <%= form_tag("/logout", method: "delete") do %>
           <%= submit_tag "logout" %>
           <% end %>
         </li>
-      <% end %>
-
-       
-      <% if logged_in?%>
-        <%= "LOGGED IN as " + current_user.email %>
-      <% end %>
       </ul>
+    <% end %>
+
+    <% if logged_in?%>
+      <%= "LOGGED IN as " + current_user.email %>
+    <% end %>
 
 
   </div>
