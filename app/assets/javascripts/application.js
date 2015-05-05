@@ -15,8 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
-// ------ included api_accessor.js ------
 //= require api_accessor
+//= require search_filters
 
 
 

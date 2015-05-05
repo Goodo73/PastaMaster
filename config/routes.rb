@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
 
   # ------ Recipes routes ------
-  #temporary for working on list view
-  get '/recipe/list' => 'recipes#list'
   resources :recipes
   # ----------------------------
 
