@@ -1,0 +1,63 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: red;
+  height: 11vh;
+  width: 100vw;
+}
+
+header div {
+  display: inline-block;
+}
+
+.logo {
+  width: 62vw;
+  padding-left: 3vw;
+  font-size: 5vh;
+  font-weight: bold;
+  line-height: 9vh;
+}
+
+.logo h1 {
+}
+
+.account-toggle * {
+  line-height: 11vh;
+}
+
+// SEARCH SHIT FROM HERE
+.phils-magic-search-img {
+  margin: 0;
+  padding: 0;
+  height: 15vh;
+  max-width: 25vw;
+  border: 10px solid rgb(255, 110, 110);
+  background-color: rgb(255, 110, 110);
+  border-radius: 10px;
+}
+
+.phils-magic-search {
+  display: block;
+  margin: 0 auto;
+  background-color: red;
+}
+
+.icon-selected {
+  background-color: red;
+}
+
+.phils-magic-button * {
+  line-height: 11vh;
+  margin-left: 4vw;
+}
+
+.phils-magic-go {
+  display: block;
+}
+// DOWN TO HERE
+
+.header-spacer {
+  height: 11vh;
+  margin-bottom: 2vh;
+}

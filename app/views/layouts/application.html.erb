@@ -11,160 +11,86 @@
 <body>
 
 <!-- HEADER -->
-<header class="navigation" role="banner">
-  <div class="navigation-wrapper">
-    <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
-    <nav role="navigation">
-      <ul id="js-navigation-menu" class="navigation-menu show">
-        <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">About</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
-      </ul>
-    </nav>
 
-    <a href="" class="navigation-menu-button" id="js-mobile-user">User</a>
-    <nav role="navigation">
-      <ul id="js-navigation-user" class="navigation-menu show">
-        <li class="nav-link"><%= link_to "Sign Up", new_user_path %></li>
-        <li class="nav-link">
-          <% if !logged_in? %>
-            <%= link_to "Log in", login_path %>
-          <% else %>
-            <ul>
-              <li>
-                <%= form_tag("/logout", method: "delete") do %>
-                <%= submit_tag "logout" %>
-                <% end %>
-              </li>
-            </ul>
-          <% end %>
-        </li>
-      </ul>
-    </nav>
-    <div class="navigation-tools">
-      <div class="search-bar">
-        <!-- <form role="search">
-          <input type="search" placeholder="Enter Search" />
-          <button type="submit">
-            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
-          </button>
-        </form> -->
-        <button class="phils-magic-button">Search Yo</button>
-        <div class="phils-magic-search">
-          <div class="phils-magic-search-row-1">
-            <img class="phils-magic-search-img" data-filter="beef" src="/assets/icons/beef.svg" alt="beef">
-            <img class="phils-magic-search-img" data-filter="pork" src="/assets/icons/pork.svg" alt="pork">
-            <img class="phils-magic-search-img" data-filter="poultry" src="/assets/icons/poultry.svg" alt="poultry">
-            <img class="phils-magic-search-img" data-filter="lamb" src="/assets/icons/lamb.svg" alt="lamb">
-          </div>
-          <div class="phils-magic-search-row-2">
-            <img class="phils-magic-search-img" data-filter="seafood" src="/assets/icons/seafood.svg" alt="seafood">
-            <img class="phils-magic-search-img" data-filter="tomato" src="/assets/icons/tomato.svg" alt="tomato">
-            <img class="phils-magic-search-img" data-filter="green" src="/assets/icons/green.svg" alt="green">
-            <img class="phils-magic-search-img" data-filter="mushroom" src="/assets/icons/mushroom.svg" alt="mushroom">
-          </div>
-          <div class="phils-magic-search-row-3">
-            <img class="phils-magic-search-img" data-filter="eggplant" src="/assets/icons/eggplant.svg" alt="eggplant">
-            <img class="phils-magic-search-img" data-filter="cream" src="/assets/icons/cream.svg" alt="cream">
-            <img class="phils-magic-search-img" data-filter="salad" src="/assets/icons/salad.svg" alt="salad">
-            <img class="phils-magic-search-img" data-filter="bake" src="/assets/icons/bake.svg" alt="bake">
-          </div>
-        </div>
-        <button class="phils-magic-go">exec</button>
 
+
+<header class="header">
+  <div class="logo">
+    p@st@ m@st@
+  </div>
+  <div class="modal">
+    <label for="modal-1">
+      <div class="modal-trigger account-toggle">
+        <%= icon('fa fa-user fa-3x', class: "sign-up") %>
       </div>
+    </label>
+    <input class="modal-state" id="modal-1" type="checkbox" />
+    <div class="modal-fade-screen">
+      <div class="modal-inner">
+        <div class="modal-close" for="modal-1"></div>
+        <div class="form-wrap">
+            <div class="tabs">
+              <h3 class="signup-tab"><a class="active" href="#signup-tab-content">Sign Up</a></h3>
+              <h3 class="login-tab"><a href="#login-tab-content">Login</a></h3>
+            </div><!--.tabs-->
+  
+            <div class="tabs-content">
+              <div id="signup-tab-content" class="active">
+                <form class="signup-form" action="" method="post">
+                  <input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
+                  <input type="text" class="input" id="user_name" autocomplete="off" placeholder="Username">
+                  <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+                  <input type="submit" class="button" value="Sign Up">
+                </form><!--.login-form-->
+                <div class="help-text">
+                  <p>By signing up, you agree to our</p>
+                  <p><a href="#">Terms of service</a></p>
+                </div><!--.help-text-->
+              </div><!--.signup-tab-content-->
+  
+              <div id="login-tab-content">
+                <form class="login-form" action="" method="post">
+                  <input type="text" class="input" id="user_login" autocomplete="off" placeholder="Email or Username">
+                  <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+                  <input type="checkbox" class="checkbox" id="remember_me">
+                  <label for="remember_me">Remember me</label>
+  
+                  <input type="submit" class="button" value="Login">
+                </form><!--.login-form-->
+                <div class="help-text">
+                  <p><a href="#">Forget your password?</a></p>
+                </div><!--.help-text-->
+              </div><!--.login-tab-content-->
+            </div><!--.tabs-content-->
+          </div><!--.form-wrap-->
+      </div><!--.modal-inner-->
+    </div><!--.modal-fade-screen-->
+  </div><!--.modal-->
+  <div class="phils-magic-button"><%= icon('fa fa-search fa-3x', class: "search-icon") %></div>
+  <div class="phils-magic-search">
+    <div class="phils-magic-search-row-1">
+      <img class="phils-magic-search-img" data-filter="beef" src="/assets/icons/beef.svg" alt="beef">
+      <img class="phils-magic-search-img" data-filter="pork" src="/assets/icons/pork.svg" alt="pork">
+      <img class="phils-magic-search-img" data-filter="poultry" src="/assets/icons/poultry.svg" alt="poultry">
+      <img class="phils-magic-search-img" data-filter="lamb" src="/assets/icons/lamb.svg" alt="lamb">
     </div>
-
-
-<!-- SIGN-UP / LOGIN MODAL -->
-
-      <div class="modal">
-        <label for="modal-1">
-          <div class="modal-trigger">
-            <%= icon('fa fa-user fa-4x', class: "sign-up") %>
-          </div>
-        </label>
-        <input class="modal-state" id="modal-1" type="checkbox" />
-        <div class="modal-fade-screen">
-          <div class="modal-inner">
-            <div class="modal-close" for="modal-1"></div>
-            <div class="form-wrap">
-                <div class="tabs">
-                  <h3 class="signup-tab"><a class="active" href="#signup-tab-content">Sign Up</a></h3>
-                  <h3 class="login-tab"><a href="#login-tab-content">Login</a></h3>
-                </div><!--.tabs-->
-
-                <div class="tabs-content">
-                  <div id="signup-tab-content" class="active">
-                    <form class="signup-form" action="" method="post">
-                      <input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
-                      <input type="text" class="input" id="user_name" autocomplete="off" placeholder="Username">
-                      <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
-                      <input type="submit" class="button" value="Sign Up">
-                    </form><!--.login-form-->
-                    <div class="help-text">
-                      <p>By signing up, you agree to our</p>
-                      <p><a href="#">Terms of service</a></p>
-                    </div><!--.help-text-->
-                  </div><!--.signup-tab-content-->
-
-                  <div id="login-tab-content">
-                    <form class="login-form" action="" method="post">
-                      <input type="text" class="input" id="user_login" autocomplete="off" placeholder="Email or Username">
-                      <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
-                      <input type="checkbox" class="checkbox" id="remember_me">
-                      <label for="remember_me">Remember me</label>
-
-                      <input type="submit" class="button" value="Login">
-                    </form><!--.login-form-->
-                    <div class="help-text">
-                      <p><a href="#">Forget your password?</a></p>
-                    </div><!--.help-text-->
-                  </div><!--.login-tab-content-->
-                </div><!--.tabs-content-->
-              </div><!--.form-wrap-->
-          </div><!--.modal-inner-->
-        </div><!--.modal-fade-screen-->
-      </div><!--.modal-->
-
-<!-- END SIGN-UP / LOGIN MODAL -->
-
-<!-- ABOUT -->
-
-      <div class="modal">
-        <label for="modal-2">
-          <div class="modal-trigger">
-            About
-          </div>
-        </label>
-        <input class="modal-state" id="modal-2" type="checkbox" />
-        <div class="modal-fade-screen">
-          <div class="modal-inner">
-            <div class="modal-close" for="modal-2">
-              
-            </div>
-            <article class="type-system-sans">
-              <h1>About Pasta Masta</h1>
-              <h2>"Life is not worth living if I cannot have pasta or bread again." - Monica Seles</h2>
-              <p class="date">6 May 2015</p>
-              <p>Pasta Masta is an app that aims to enable those less confident cooks to become masters of quick and tasty pasta dishes.</p>
-              <p>The recipes are hand picked for beginning cooks, with minimal ingredients, clear easy-to-follow steps and the option to comment and rate recipes used from the site to help others achieve mastery.</p>
-              <p>Included within the recipes are tips to help assist the budding apprentices to become better each time they cook a recipe. Budding cooks don’t have to join the site, but if they choose to sign up, they will be given the chance to tailor the options for dishes shown during search requests.</p>
-              <p>Suggestions and feedback are most welcome. pastamasta@pastamasta.com</p>
-              <p class="author">The Pasta Masta Masters</p>
-            </article>
-          </div>
-        </div>
-      </div>
-      
-<!-- END ABOUT -->
-
-      <% if logged_in?%>
-        <%= "LOGGED IN as " + current_user.email %>
-      <% end %>
+    <div class="phils-magic-search-row-2">
+      <img class="phils-magic-search-img" data-filter="seafood" src="/assets/icons/seafood.svg" alt="seafood">
+      <img class="phils-magic-search-img" data-filter="tomato" src="/assets/icons/tomato.svg" alt="tomato">
+      <img class="phils-magic-search-img" data-filter="green" src="/assets/icons/green.svg" alt="green">
+      <img class="phils-magic-search-img" data-filter="mushroom" src="/assets/icons/mushroom.svg" alt="mushroom">
+    </div>
+    <div class="phils-magic-search-row-3">
+      <img class="phils-magic-search-img" data-filter="eggplant" src="/assets/icons/eggplant.svg" alt="eggplant">
+      <img class="phils-magic-search-img" data-filter="cream" src="/assets/icons/cream.svg" alt="cream">
+      <img class="phils-magic-search-img" data-filter="salad" src="/assets/icons/salad.svg" alt="salad">
+      <img class="phils-magic-search-img" data-filter="bake" src="/assets/icons/bake.svg" alt="bake">
+      <button class="phils-magic-go">exec</button>
     </div>
   </div>
 </header>
+<div class="header-spacer"></div>
+
 <!-- END HEADER -->
 
 <%= yield %>
@@ -174,7 +100,33 @@
   <div class="footer-logo">
   </div>
     <ul>
-      <li><a href="javascript:void(0)">About</a></li>
+      <li>
+        <div class="modal">
+          <label for="modal-2">
+            <div class="modal-trigger">
+              About
+            </div>
+          </label>
+          <input class="modal-state" id="modal-2" type="checkbox" />
+          <div class="modal-fade-screen">
+            <div class="modal-inner">
+              <div class="modal-close" for="modal-2">
+                
+              </div>
+              <article class="type-system-sans">
+                <h1>About Pasta Masta</h1>
+                <h2>"Life is not worth living if I cannot have pasta or bread again." - Monica Seles</h2>
+                <p class="date">6 May 2015</p>
+                <p>Pasta Masta is an app that aims to enable those less confident cooks to become masters of quick and tasty pasta dishes.</p>
+                <p>The recipes are hand picked for beginning cooks, with minimal ingredients, clear easy-to-follow steps and the option to comment and rate recipes used from the site to help others achieve mastery.</p>
+                <p>Included within the recipes are tips to help assist the budding apprentices to become better each time they cook a recipe. Budding cooks don’t have to join the site, but if they choose to sign up, they will be given the chance to tailor the options for dishes shown during search requests.</p>
+                <p>Suggestions and feedback are most welcome. pastamasta@pastamasta.com</p>
+                <p class="author">The Pasta Masta Masters</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </li>
       <li><a href="javascript:void(0)">Contact</a></li>
       <li><a href="javascript:void(0)">Products</a></li>
     </ul>
