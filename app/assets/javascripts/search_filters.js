@@ -81,8 +81,9 @@ var applyFilters = {
     $p = $('<p>').html(recipe['description']);
     $divCopy = $('<div>').addClass('card-copy').append($p);
 
-    $p = $('<p>').html('Full Recipe');
+    $p = $('<p>').html('See full recipe');
     $divFull = $('<div>').addClass('card-see-full').append($p);
+    $divFull.on('click', expandFullScreenView);
     $divCopy.append($divFull);    
 
     $divCard.append($divCopy);
