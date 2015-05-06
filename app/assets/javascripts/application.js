@@ -75,6 +75,7 @@ $(document).ready(function() {
   $('.phils-magic-search-img').on('click', toggleSearchTerm);
   $('.phils-magic-search-img').on('click', toggleSearchIconStyle);
   $('.phils-magic-go').on('click', applyFilters.getFilterShowRecipes);
+  $('.phils-magic-go').on('click', searchToggle);
 });
 // ------------------------------------
 
@@ -89,37 +90,39 @@ function cardCopyShow() {
 }
 
 function cardCopySlide() {
-  var state = $(this).children('.card-copy')[0]["style"]["cssText"];
-  if (state === 'display: block;') {
-    expandFullScreenView.call(this);
-  }
+  // var state = $(this).children('.card-copy')[0]["style"]["cssText"];
+  // if (state === 'display: block;') {
+  //   expandFullScreenView.call(this);
+  // }
   $(this).children('.card-copy').slideToggle(300);
 }
 
 function expandFullScreenView() {
-  $.ajax({
-    url: '/api/recipes/' + $(this)[0]['dataset']['id'],
-    dataType: 'json'
-  }).done(function(data) {
-    recipeDetail.scroll = $(window).scrollTop();
-    recipeDetail.render(data);
-    recipeDetail.displayDetailed();
-  });
+  console.log($(this));
+  // $.ajax({
+  //   url: '/api/recipes/' + $(this)[0]['dataset']['id'],
+  //   dataType: 'json'
+  // }).done(function(data) {
+  //   recipeDetail.scroll = $(window).scrollTop();
+  //   recipeDetail.render(data);
+  //   recipeDetail.displayDetailed();
+  // });
 }
 
 function windowSizeCheck() {
-  $('.card').off('click', expandFullScreenView);
+  // $('.card-see-full').off('click', expandFullScreenView);
   $('.card').off('click', cardCopySlide);
-  if ($(window).width() < 656){
+  if ($(window).width() < 656) {
     cardCopyHide();
     $('.card').on('click', cardCopySlide);
   } else {
     cardCopyShow();
-    $('.card').on('click', expandFullScreenView);
+    // $('.card-see-full').on('click', expandFullScreenView);
   }
 }
 
 $(document).ready(function() {
+  $('.card-see-full').on('click', expandFullScreenView);
   windowSizeCheck();
   $(window).resize(windowSizeCheck);
 });
