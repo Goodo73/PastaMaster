@@ -1,10 +1,24 @@
 var applyFilters = {
-  getRecipes: function() {
+  getShowRecipes: function() {
     $.ajax({
       url: '/api/recipes/list',
       dataType: 'json'
     }).done(function(data){
       applyFilters.recipes = data;
+    }).done(function() {
+      applyFilters.displayRecipes();
+    });
+  },
+  getFilterShowRecipes: function() {
+    $.ajax({
+      url: '/api/recipes/list',
+      dataType: 'json'
+    }).done(function(data){
+      applyFilters.recipes = data;
+    }).done(function() {
+      applyFilters.filterRecipes();
+    }).done(function() {
+      applyFilters.displayRecipes();
     });
   },
   searchTerms: ['garlic','bacon'],
@@ -32,6 +46,7 @@ var applyFilters = {
         applyFilters.render(recipe);
       });
     }
+    windowSizeCheck();
   },
   render: function(recipe) {
 
