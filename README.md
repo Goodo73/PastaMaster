@@ -7,12 +7,12 @@ Fully responsive and usable on mobile, tablet and laptop.
 
 ## Link
 
-link
+Website link
 
 
 ## Instructions
 
-foobar
+
 
 
 ## Technology used in build
