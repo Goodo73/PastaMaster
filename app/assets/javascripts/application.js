@@ -90,27 +90,32 @@ function cardCopyShow() {
 
 function cardCopySlide() {
   var state = $(this).children('.card-copy')[0]["style"]["cssText"];
-  var recipeID = $(this)[0]['dataset']['id'];
   if (state === 'display: block;') {
-    $.ajax({
-      url: '/api/recipes/' + recipeID,
-      dataType: 'json'
-    }).done(function(data){
-      recipeDetail.scroll = $(window).scrollTop();
-      recipeDetail.render(data);
-      recipeDetail.displayDetailed();
-    });
+    expandFullScreenView.call(this);
   }
   $(this).children('.card-copy').slideToggle(300);
 }
 
+function expandFullScreenView() {
+  $.ajax({
+    url: '/api/recipes/' + $(this)[0]['dataset']['id'],
+    dataType: 'json'
+  }).done(function(data) {
+    recipeDetail.scroll = $(window).scrollTop();
+    recipeDetail.render(data);
+    recipeDetail.displayDetailed();
+  });
+}
+
 function windowSizeCheck() {
+  $('.card').off('click', expandFullScreenView);
   $('.card').off('click', cardCopySlide);
   if ($(window).width() < 656){
     cardCopyHide();
     $('.card').on('click', cardCopySlide);
   } else {
     cardCopyShow();
+    $('.card').on('click', expandFullScreenView);
   }
 }
 
