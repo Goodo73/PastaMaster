@@ -11,9 +11,9 @@ class SessionController < ApplicationController
 
   #logging in
   def create
-    @user = User.where(email: params[:email])[0]
+    @user = User.where(email: params[:session][:email])
 
-    if @user && @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       redirect_to root_path
     else
