@@ -50,6 +50,35 @@ $(document).ready(function() {
 //  ---------------------------------
 
 
+// ----------- Search slide -----------
+function searchToggle() {
+  $('.phils-magic-search').slideToggle(300);
+}
+
+function toggleSearchTerm() {
+  var category = $(this)[0]['dataset']['filter'];
+  var idxOf = applyFilters.searchCategories.indexOf(category)
+  if (idxOf === -1) {
+    applyFilters.searchCategories.push(category);
+  } else {
+    applyFilters.searchCategories.splice(idxOf, 1);
+  }
+}
+
+function toggleSearchIconStyle() {
+
+}
+
+$(document).ready(function() {
+  $('.phils-magic-search').hide();
+  $('.phils-magic-button').on('click', searchToggle);
+  $('.phils-magic-search-img').on('click', toggleSearchTerm);
+  $('.phils-magic-search-img').on('click', toggleSearchIconStyle);
+  $('.phils-magic-go').on('click', applyFilters.getFilterShowRecipes);
+});
+// ------------------------------------
+
+
 // ----------- Dish slide -----------
 function cardCopyHide() {
   $('.card-copy').hide();
@@ -85,7 +114,7 @@ function windowSizeCheck() {
   }
 }
 
-$('document').ready(function() {
+$(document).ready(function() {
   windowSizeCheck();
   $(window).resize(windowSizeCheck);
 });
