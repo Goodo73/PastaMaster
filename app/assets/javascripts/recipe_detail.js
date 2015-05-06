@@ -9,7 +9,7 @@ var recipeDetail = {
       $fullCard.append($element);  
     }
 
-    addToFullCard('close-btn', $('<button>').html('close'));
+    addToFullCard('close-btn', $('<p>').html('close'));
     addToFullCard('image', $('<img>').attr('src', recipe['image_url']));
     addToFullCard('header', recipe['title']);
     addToFullCard('copy', recipe['description']);
