@@ -31,6 +31,10 @@ gem 'neat'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Font Awesome font set for sass
+gem 'font-awesome-sass', '~> 4.3.0'
+
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
