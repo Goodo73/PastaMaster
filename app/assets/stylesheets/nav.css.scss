@@ -7,7 +7,11 @@ header {
   width: 100vw;
 }
 
-header div {
+.phils-magic-button {
+  display: inline-block;
+}
+
+.modal-trigger, .modal {
   display: inline-block;
 }
 
@@ -17,9 +21,10 @@ header div {
   font-size: 5vh;
   font-weight: bold;
   line-height: 9vh;
+  display: inline-block;
 }
 
-.logo h1 {
+.logo > h1 {
 }
 
 .account-toggle * {
