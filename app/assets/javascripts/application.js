@@ -66,7 +66,7 @@ function toggleSearchTerm() {
 }
 
 function toggleSearchIconStyle() {
-
+  $(this).toggleClass('icon-selected');
 }
 
 $(document).ready(function() {
