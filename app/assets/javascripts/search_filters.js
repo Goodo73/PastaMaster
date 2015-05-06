@@ -1,5 +1,9 @@
 var applyFilters = {
+  clearCards: function() {
+    $('.cards').html('');
+  },
   getShowRecipes: function() {
+    applyFilters.clearCards();
     $.ajax({
       url: '/api/recipes/list',
       dataType: 'json'
@@ -10,6 +14,7 @@ var applyFilters = {
     });
   },
   getFilterShowRecipes: function() {
+    applyFilters.clearCards();
     $.ajax({
       url: '/api/recipes/list',
       dataType: 'json'
@@ -21,14 +26,29 @@ var applyFilters = {
       applyFilters.displayRecipes();
     });
   },
-  searchTerms: ['garlic','bacon'],
+  searchCategories: [],
+  populateTerms: function() {
+    var searchArray = [];
+    $.each(applyFilters.searchCategories, function(index, category) {
+      searchArray.push(foodWords[category]);
+    });
+    applyFilters.searchTerms = searchArray;
+  },
+  searchTerms: [],
   filterRecipes: function() {
+    applyFilters.populateTerms();
     if (applyFilters.searchTerms.length > 0) {
       applyFilters.recipes = $.map(applyFilters.recipes, function(recipe) {
         var count = 0;
-        $.each(applyFilters.searchTerms, function(index, term) {
-          var re = new RegExp(term.toLowerCase());
-          if (re.test(recipe['ingredients'].toLowerCase())) {
+        $.each(applyFilters.searchTerms, function(index, terms) {
+          var includeRecipe = false;
+          $.each(terms, function(index, term) {
+            var re = new RegExp(term.toLowerCase());
+            if (re.test(recipe['ingredients'].toLowerCase())) {
+              includeRecipe = true;
+            }
+          });
+          if (includeRecipe) {
             count++;
           }
         })
