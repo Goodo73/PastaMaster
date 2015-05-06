@@ -8,7 +8,6 @@
 // @import "home";
 // @import "users";
 @import "recipe_fullscreen";
-@import "search";
 @import "nav";
 
 /*
@@ -500,17 +499,30 @@
     padding: ($base-spacing / 3) ($base-spacing / 2);
   }
 
-    .card-copy {
-      font-size: 0.9em;
-      line-height: 1.5em;
-      padding: ($base-spacing / 2) ($base-spacing / 2);
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
 
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+
+    .card-see-full {
+      font-size: 1.1em;
+      line-height: 1.5em;
+      text-align: center;
+      
       p {
-        margin: 0 0 ($base-spacing / 2);
+        text-decoration: underline;
+        color: $action-color;
       }
 
     }
-    
+  }
+  
+
+
   &:focus,
   &:hover {
     background-color: $card-hover-background;
