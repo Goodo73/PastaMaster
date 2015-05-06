@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Titillium+Web:400,400italic,600italic,600,700,700italic,900,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -15,7 +17,7 @@
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
         <li class="nav-link"><a href="javascript:void(0)">Products</a></li>
-        <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
+        <li class="nav-link"><a href="javascript:void(0)">About</a></li>
         <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
       </ul>
     </nav>
@@ -126,6 +128,32 @@
       </div><!--.modal-->
 
 <!-- END SIGN-UP / LOGIN MODAL -->
+
+<!-- ABOUT -->
+
+      <article class="type-system-sans">
+        <h1>About Pasta Masta</h1>
+        <h2>"Life is not worth living if I cannot have pasta or bread again." - Monica Seles</h2>
+        <p class="date">6 May 2015</p>
+        <p>Pasta Masta is an app that aims to enable those less confident cooks to become masters of quick and tasty pasta dishes.
+        </p>
+        <p>
+        The recipes are hand picked for beginning cooks, with minimal ingredients, clear easy-to-follow steps and the option to comment and rate recipes used from the site to help others achieve mastery.
+        </p>
+        <p>
+        Included within the recipes are tips to help assist the budding apprentices to become better each time they cook a recipe. Budding cooks don’t have to join the site, but if they choose to sign up, they will be given the chance to tailor the options for dishes shown during search requests.
+        </p>
+        <p>
+        Suggestions and feedback are most welcome. pastamasta@pastamasta.com  
+        </p>
+        <p class="author">The Pasta Masta Masters</p>
+      </article>
+
+<!-- END ABOUT -->
+
+          </div>
+        </div>
+      </div>
       
       <% if logged_in?%>
         <%= "LOGGED IN as " + current_user.email %>
