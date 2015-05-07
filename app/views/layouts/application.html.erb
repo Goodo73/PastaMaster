@@ -38,7 +38,7 @@
 
             <div class="tabs-content">
               <div id="login-tab-content" class="active">
-                <%= form_for :session, url: login_path do |f| %>
+                <%= form_for :session, remote: true, url: login_path, html: { id: 'login-form'} do |f| %>
                   <p><%= f.email_field :email, class: 'input', placeholder: "Email" %></p>
                   <p><%= f.password_field :password, class: 'input', placeholder: "Password" %></p>
                   
@@ -161,6 +161,12 @@
   </div>
 
 </footer>
+
+<script>
+  $('#login-form').on('ajax:success', function(event, data) {
+    console.log(data.msg);
+  });
+</script>
 
 <!-- END FOOTER -->
 

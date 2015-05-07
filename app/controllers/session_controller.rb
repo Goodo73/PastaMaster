@@ -17,7 +17,7 @@ class SessionController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render :new
+      render :json => { msg: 'Invalid email and/or password. Please try again.'}
     end
   end
 
