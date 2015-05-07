@@ -8,29 +8,30 @@
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background: white;
-  margin-bottom: 20px;
+  background: #E3DCDC;
   font-weight: 300;
 }
 
 .full-close-btn {
   position: fixed;
-  top: 3vw;
+  top: 13vh;
   right: 3vw;
-  background: white;
+  background: #2e2e2e;
   margin: 0;
   padding: 0;
-  font-size: 15vh;
+  font-size: 10vh;
   text-align: center;
-  height: 15vh;
-  line-height: 15vh;
-  width: 15vh;
-  opacity: .7;
+  height: 12vh;
+  line-height: 12vh;
+  width: 12vh;
+  opacity: .6;
   border-radius: 100%;
   z-index: 1;
+  color: #e2e2e2;
 }
 
 .full-image {
+  text-align: center;
   width: 100vw;
 }
 
@@ -38,34 +39,19 @@
   padding: 0 5vw;
   margin-top: -6.5vh;
   opacity: .7;
+  text-align: center;
 }
 
 .full-copy {
   padding: 0 5vw;
 }
 
-.full-ingredients {
-
-}
-
-.full-method {
-
-}
-
-.full-rating {
-
-}
-
-.full-cook-time {
-
-}
-
-.full-nbr-cooked {
-
-}
-
 .columns {
   min-height: 60px;
+}
+
+.full-spacer {
+  min-height: 0;  
 }
 
 header p {
