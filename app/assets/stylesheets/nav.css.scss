@@ -13,7 +13,7 @@ header {
   width: 100vw;
 }
 
-.phils-magic-button, .modal-trigger {
+.search-dropdown, .modal-trigger {
         height: 1.6em;
         opacity: 0.7;
         padding: 1px;
@@ -24,7 +24,7 @@ header {
         }
       }
 
-.phils-magic-button {
+.search-dropdown {
   display: inline-block;
 }
 
@@ -49,7 +49,7 @@ header {
 }
 
 // SEARCH SHIT FROM HERE
-.phils-magic-search-img {
+.search-img {
   margin: 0;
   padding: 0;
   height: 15vh;
@@ -59,7 +59,7 @@ header {
   border-radius: 10px;
 }
 
-.phils-magic-search {
+.search-wrapper {
   display: block;
   margin: 0 auto;
   background-color: red;
@@ -69,12 +69,12 @@ header {
   background-color: red;
 }
 
-.phils-magic-button * {
+.search-dropdown * {
   line-height: 11vh;
   margin-left: 4vw;
 }
 
-.phils-magic-go {
+.search-execute {
   display: block;
 }
 // DOWN TO HERE
