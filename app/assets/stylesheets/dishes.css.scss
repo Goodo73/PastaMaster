@@ -12,7 +12,7 @@
   $base-border-radius: 3px !default;
   $base-background-color: white ;
   $base-spacing: .75em !default;
-  $action-color: #477DCA !default;
+  $action-color: #ff0000 !default;
   $base-link-color: $action-color !default;
   $dark-gray: #333 !default;
   $base-font-color: grey !default;
@@ -77,9 +77,16 @@
         overflow: hidden;
         margin: 0 0 ($base-spacing / 2);
       }
+      
+      .card-see-full {
+        font-size: 1.1em;
+        color: $action-color;
+        text-align: center;
+      }
 
     }
     
+
   &:focus,
   &:hover {
     background-color: $card-hover-background;
