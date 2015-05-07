@@ -4,4 +4,7 @@ class RecipesController < ApplicationController
     
   end
 
+  def fullscreen
+  end
+
 end

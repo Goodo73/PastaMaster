@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  get '/recipes/fullscreen' => 'recipes#fullscreen'
   # ------ Recipes routes ------
   resources :recipes
   # ----------------------------
