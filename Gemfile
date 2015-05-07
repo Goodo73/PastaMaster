@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -33,6 +34,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Font Awesome font set for sass
 gem 'font-awesome-sass', '~> 4.3.0'
+
+# gem 'compass-rails'
+gem 'zurb-foundation'
+
 
 
 # Use Unicorn as the app server

@@ -3,7 +3,7 @@ class SessionController < ApplicationController
   #login form
   def new
     if logged_in?
-      redirect_to '/'
+      redirect_to root_path
 
       
     end
@@ -11,11 +11,11 @@ class SessionController < ApplicationController
 
   #logging in
   def create
-    @user = User.where(email: params[:email])[0]
+    @user = User.find_by(email: params[:session][:email])
 
-    if @user && @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to root_path
     else
       render :new
     end
@@ -24,7 +24,7 @@ class SessionController < ApplicationController
   # logging out 
   def destroy
     session[:user_id] = nil
-    redirect_to '/'
+    redirect_to root_path
   end
 
 end
