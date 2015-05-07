@@ -14,25 +14,28 @@ var recipeDetail = {
     addToFullCard('header row large-12', $('<h3>').html(recipe['title']));
     addToFullCard('copy row large-12', recipe['description']);
 
-    var recIng = recipe['ingredients'].replace(/\n\n/g,"\n"); //fancy bit
-    recIng = recipe['ingredients'].replace(/\n\r/g,"\n"); //fancy bit
+    var recIng = recipe['ingredients'].replace(/\n\n/g,"\n");
+    recIng = recipe['ingredients'].replace(/\n\r/g,"\n");
     recIng = recIng.replace(/\n/g,"<br>");
-
     addToFullCard('ingredients row large-6 columns', "<h5>Ingredients:</h5> \n" + recIng);
-    
-    var recMet = recipe['method'].replace(/\n\n/g,"\n"); //fancy bit
-    recMet = recipe['method'].replace(/\n\r/g,"\n"); //fancy bit
+
+    var recMet = recipe['method'].replace(/\n\n/g,"\n");
+    recMet = recipe['method'].replace(/\n\r/g,"\n");
     recMet = recMet.replace(/\n/g,"<br>");
-    
     addToFullCard('method large-6 columns', "<h5>Method:</h5> \n" + recMet);
-    addToFullCard('cook-time small-4 medium-4 large-4 columns', "Cook time: " + recipe['cook_time'] + " minutes");
+    
+    addToFullCard('spacer small-12 medium-12 large-12 columns', "");
+
+    addToFullCard('cook-time small-4 medium-4 large-4 columns', "Cook: " + recipe['cook_time'] + " mins");
     addToFullCard('nbr-cooked small-4 medium-4 large-4 columns', "Rated " + recipe['nbr_times_cooked'] + " times");
-    addToFullCard('rating small-4 medium-4 large-4 columns', recipe['user_rating'] + " stars");
+    
+    
+    var fullStars = Array(Math.round(recipe['user_rating'])+1).join('★');
+    var emptyStars = Array(5-Math.round(recipe['user_rating'])+1).join('☆');
+    addToFullCard('rating small-4 medium-4 large-4 columns', fullStars + emptyStars);
     
     $('#recipe-detail').html($fullCard);
     $('.full-close-btn').on('click', recipeDetail.close);
-
-    console.log(recipe['ingredients']);
 
   },
   displayDetailed: function() {
