@@ -1,11 +1,28 @@
+$header-background: #818181;
+$header-trim:#EB8E60;
+$header-font-color: white;
+
 header {
+  background-color: $header-background;
+  border-bottom: 10px solid $header-trim;
+  color: $header-font-color;
   position: fixed;
   top: 0;
   z-index: 1;
-  background-color: red;
   height: 11vh;
   width: 100vw;
 }
+
+.phils-magic-button, .modal-trigger {
+        height: 1.6em;
+        opacity: 0.7;
+        padding: 1px;
+
+        &:focus,
+        &:hover {
+          opacity: 1;
+        }
+      }
 
 .phils-magic-button {
   display: inline-block;
@@ -66,3 +83,6 @@ header {
   height: 11vh;
   margin-bottom: 2vh;
 }
+
+
+

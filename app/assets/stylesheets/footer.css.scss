@@ -32,16 +32,30 @@
   font-family: helvetica, arial;
   $base-spacing: 1.5em !default;
   $action-color: #477DCA !default;
+  $small-screen: em(440) !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
-  $footer-background: #E51616;  
+  $footer-background: #818181;
+  $footer-trim: #EB8E60;
   $footer-color: white;
 
-
   background: $footer-background;
+  border-top: 10px solid $footer-trim;
   padding: $base-spacing;
   width: 100%;
   display: inline-block;
+  
+  .modal-trigger {
+    color: white;
+  }
+
+  @include media($medium-screen) {
+    padding: 0em
+  }
+
+  @include media($small-screen) {
+    padding: 0em
+  }
 
   .footer-logo {
     margin-right: 1em;
@@ -68,6 +82,14 @@
       margin-left: 1em;
       margin-bottom: 0;
     }
+
+    @include media($medium-screen) {
+      text-align: center;
+    }
+
+    @include media ($small-screen) {
+      text-align: center;
+    }
   }
 
   ul li {
@@ -86,11 +108,15 @@
   ul li a {
     color: $footer-color;
     text-decoration: none;
+    
+
 
     &:focus,
     &:hover {
       color: transparentize($footer-color, 0);
     }
+
+
   }
 
   .footer-secondary-links {
@@ -102,9 +128,17 @@
       font-size: 0.8em;
       font-weight: 400;
     }
+    
+    .social-wrapper {
+      text-align: center;
+    }
+
+    .social-wrapper ul {
+      display: inline-block;
+    }
 
     ul.footer-social {
-      margin: 1em 0 0 0;
+      margin: 0;
 
       @include media($large-screen) {
         float: right;
@@ -137,6 +171,8 @@
     }
   }
 }
+
+
 
 
 

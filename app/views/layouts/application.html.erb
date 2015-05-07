@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PastaMaster</title>
+  <title>PastaMaster - Simple pasta dishes</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,10 +10,12 @@
 </head>
 <body>
 
+
+
 <!-- HEADER -->
 <header class="header">
   <div class="logo">
-    p@st@ m@st@
+    PASTA MASTA
   </div>
 
   <div class="phils-magic-button"><%= icon('fa fa-search fa-3x', class: "search-icon") %></div>
@@ -135,6 +137,7 @@
           </div>
         </div>
       </li>
+
       <li><a href="javascript:void(0)">Contact</a></li>
       <li><a href="javascript:void(0)">Products</a></li>
     </ul>
@@ -144,18 +147,19 @@
         <li><a href="javascript:void(0)">Terms and Conditions</a></li>
         <li><a href="javascript:void(0)">Privacy Policy</a></li>
       </ul>
-
-      <ul class="footer-social">
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+      <div class="social-wrapper">
+        <ul class="footer-social">
+          <li><a href="javascript:void(0)">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/facebook-logo-circle.png" alt="Facebook">
+            </a></li>
+          <li><a href="javascript:void(0)">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
           </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/twitter-logo-circle.png" alt="Twitter">
-        </a></li>
-        <li><a href="javascript:void(0)">
-          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
-        </a></li>
-      </ul>
+          <li><a href="javascript:void(0)">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/youtube-logo-circle.png" alt="YouTube">
+          </a></li>
+        </ul>
+      </div>
     </div>
 </footer>
 
