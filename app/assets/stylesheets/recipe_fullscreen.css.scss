@@ -10,6 +10,7 @@
   padding: 0;
   background: #E3DCDC;
   font-weight: 300;
+  font-family: 'Roboto', sans-serif;
 }
 
 .full-close-btn {
@@ -47,7 +48,7 @@
 }
 
 .columns {
-  min-height: 60px;
+  min-height: 100px;
 }
 
 .full-spacer {
@@ -57,11 +58,14 @@
 header p {
   color: white;
 }
+
 h3 {
+  font-family: 'Roboto', sans-serif;
   font-weight: 900;
 }
 
 h5 {
+  font-family: 'Roboto', sans-serif;
   font-weight: 900;
 }
 
