@@ -12,74 +12,75 @@
 <body>
 
 <!-- HEADER -->
-<header class="header">
-
-<div class="header-content">
-  
-  <div class="header-logo">
-    <h1>PASTA MASTA</h1>
-  </div>
-
-  <div class="header-searchlogo">
-    <div class="search-dropdown"><%= icon('fa fa-search fa-3x', class: "search-icon") %></div>
-  </div>
-  </div>
-
-  <div class="header-accountlogo">
-  <div class="modal">
-    <label for="modal-1">
-      <div class="modal-trigger">
-        <%= icon('fa fa-user fa-4x', class: "sign-up") %>
+  <header>
+    <div class="header-content">
+      <div class="header-logo">
+        <h1>PASTA MASTA</h1>
       </div>
-    </label>
-    <input class="modal-state" id="modal-1" type="checkbox" />
-    <div class="modal-fade-screen">
-      <div class="modal-inner">
-        <div class="modal-close" for="modal-1"></div>
-        <div class="form-wrap">
-            <div class="tabs">
-              <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
-              <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
-            </div><!--.tabs-->
 
-            <div class="tabs-content">
-              <div id="login-tab-content" class="active">
-                <%= form_for :session, remote: true, url: login_path, html: { id: 'login-form'} do |f| %>
-                  <p><%= f.email_field :email, class: 'input', placeholder: "Email" %></p>
-                  <p><%= f.password_field :password, class: 'input', placeholder: "Password" %></p>
-                  
-                  <%= f.submit "Login", class: "button" %>
-                <% end %><!--.login-form-->
+      <div class="header-searchlogo">
+        <div class="search-dropdown"><%= icon('fa fa-search fa-3x', class: "search-icon") %></div>
+      </div>
+    </div><!--.header-content-->
 
-                <div class="help-text">
-                  <p><a href="#">Forgot your password?</a></p>
-                </div><!--.help-text-->
-              </div><!--.login-tab-content-->
+    <div class="header-accountlogo">
+      <div class="modal">
+        <label for="modal-1">
+          <div class="modal-trigger">
+            <%= icon('fa fa-user fa-4x', class: "sign-up") %>
+          </div>
+        </label>
+        <input class="modal-state" id="modal-1" type="checkbox" />
+        <div class="modal-fade-screen">
+          <div class="modal-inner">
+            <div class="modal-close" for="modal-1"></div>
 
-              <div id="signup-tab-content">
-                <%= form_tag users_path do %>
-                  <p><%= text_field_tag :email, nil, class: 'input', placeholder: "Email" %></p>
-                  <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password", type: 'password' %></p>
-                  <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password", type: 'password' %></p>
-                  
-                  <p><%= submit_tag 'Sign Up', class: 'button' %></p>
-                <% end %><!--.signup-form-->
+            <!-- SIGN-UP / LOGIN FORMS -->
+            <div class="form-wrap">
+              <div class="tabs">
+                <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
+                <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
+              </div><!--.tabs-->
 
-                <div class="help-text">
-                  <p>By signing up, you agree to our</p>
-                  <p><a href="#">Terms of service</a></p>
-                </div><!--.help-text-->
-              </div><!--.signup-tab-content-->
-            </div><!--.tabs-content-->
-          </div><!--.form-wrap-->
-      </div><!--.modal-inner-->
-    </div><!--.modal-fade-screen-->
-  </div><!--.modal-->
+              <div class="tabs-content">
+                <div id="login-tab-content" class="active">
+                  <%= form_for :session, remote: true, url: login_path, html: { id: 'login-form'} do |f| %>
+                    <p><%= f.email_field :email, class: 'input', placeholder: "Email" %></p>
+                    <p><%= f.password_field :password, class: 'input', placeholder: "Password" %></p>
+                    
+                    <%= f.submit "Login", class: "button" %>
+                  <% end %><!--.login-form-->
 
-<!-- END SIGN-UP / LOGIN MODAL -->
-  </div>
+                  <div class="help-text">
+                    <p><a href="#">Forgot your password?</a></p>
+                  </div><!--.help-text-->
+                </div><!--.login-tab-content-->
 
-</header>
+                <div id="signup-tab-content">
+                  <%= form_tag users_path do %>
+                    <p><%= text_field_tag :email, nil, class: 'input', placeholder: "Email" %></p>
+                    <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password", type: 'password' %></p>
+                    <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password", type: 'password' %></p>
+                    
+                    <p><%= submit_tag 'Sign Up', class: 'button' %></p>
+                  <% end %><!--.signup-form-->
+
+                  <div class="help-text">
+                    <p>By signing up, you agree to our</p>
+                    <p><a href="#">Terms of service</a></p>
+                  </div><!--.help-text-->
+                </div><!--.signup-tab-content-->
+              </div><!--.tabs-content-->
+            </div><!--.form-wrap-->
+            <!-- END SIGN-UP / LOGIN FORMS -->
+
+          </div><!--.modal-inner-->
+        </div><!--.modal-fade-screen-->
+      </div><!--.modal-->
+
+
+    </div><!--.header-accountlogo-->
+  </header>
 
 
 <div class="header-spacer"></div>
