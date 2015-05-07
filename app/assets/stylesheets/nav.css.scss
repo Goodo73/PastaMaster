@@ -1,13 +1,34 @@
+$header-background: #818181;
+$header-trim:#EB8E60;
+$header-font-color: white;
+
 header {
+  background-color: $header-background;
+  border-bottom: 10px solid $header-trim;
+  color: $header-font-color;
   position: fixed;
   top: 0;
   z-index: 1;
-  background-color: red;
   height: 11vh;
   width: 100vw;
 }
 
-header div {
+.phils-magic-button, .modal-trigger {
+        height: 1.6em;
+        opacity: 0.7;
+        padding: 1px;
+
+        &:focus,
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+.phils-magic-button {
+  display: inline-block;
+}
+
+.modal-trigger, .modal {
   display: inline-block;
 }
 
@@ -17,9 +38,10 @@ header div {
   font-size: 5vh;
   font-weight: bold;
   line-height: 9vh;
+  display: inline-block;
 }
 
-.logo h1 {
+.logo > h1 {
 }
 
 .account-toggle * {
@@ -61,3 +83,6 @@ header div {
   height: 11vh;
   margin-bottom: 2vh;
 }
+
+
+
