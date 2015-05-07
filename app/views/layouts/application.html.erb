@@ -90,27 +90,13 @@
             <div class="modal-close" for="modal-1"></div>
             <div class="form-wrap">
                 <div class="tabs">
-                  <h3 class="signup-tab"><a class="active" href="#signup-tab-content">Sign Up</a></h3>
-                  <h3 class="login-tab"><a href="#login-tab-content">Login</a></h3>
+                  <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
+                  <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
                 </div><!--.tabs-->
 
                 <div class="tabs-content">
-                  <div id="signup-tab-content" class="active">
-                    <%= form_tag users_path do %>
-                      <p><%= text_field_tag :email, nil, class: 'input', placeholder: "Email" %></p>
-                      <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password", type: 'password' %></p>
-                      <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password", type: 'password' %></p>
-                      
-                      <button class="button">Sign Up</button>
-                    <% end %><!--.signup-form-->
 
-                     <div class="help-text">
-                      <p>By signing up, you agree to our</p>
-                      <p><a href="#">Terms of service</a></p>
-                    </div><!--.help-text-->
-                  </div><!--.signup-tab-content-->
-
-                  <div id="login-tab-content">
+                  <div id="login-tab-content" class="active">
                     <%= form_for :session, url: login_path do |f| %>
                       <p><%= f.email_field :email, class: 'input', placeholder: "Email" %></p>
                       <p><%= f.password_field :password, class: 'input', placeholder: "Password" %></p>
@@ -122,6 +108,22 @@
                       <p><a href="#">Forgot your password?</a></p>
                     </div><!--.help-text-->
                   </div><!--.login-tab-content-->
+
+                  <div id="signup-tab-content">
+                    <%= form_tag users_path do %>
+                      <p><%= text_field_tag :email, nil, class: 'input', placeholder: "Email" %></p>
+                      <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password", type: 'password' %></p>
+                      <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password", type: 'password' %></p>
+                      
+                      <p><%= submit_tag 'Sign Up', class: 'button' %></p>
+                    <% end %><!--.signup-form-->
+
+                     <div class="help-text">
+                      <p>By signing up, you agree to our</p>
+                      <p><a href="#">Terms of service</a></p>
+                    </div><!--.help-text-->
+                  </div><!--.signup-tab-content-->
+
                 </div><!--.tabs-content-->
               </div><!--.form-wrap-->
           </div><!--.modal-inner-->
