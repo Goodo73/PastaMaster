@@ -34,12 +34,6 @@
     display: none;
   }
 
-/*  .modal-trigger {
-    @include button(flat, $action-color);
-    padding: 0.8em 1em;
-    position: 0 0 0 0;
-  }
-*/
   .modal-fade-screen { // overlay
     @include transition(opacity 0.25s ease);
     @include position(fixed, 0px 0px 0px 0px);
@@ -100,7 +94,6 @@
     width: 95%;
 
     @include media($medium-screen) {
-      /*max-height: 70%;*/
       padding: $modal-padding;
       width: 60%;
     }
