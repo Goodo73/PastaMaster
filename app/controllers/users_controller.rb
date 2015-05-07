@@ -1,13 +1,17 @@
 class UsersController < ApplicationController  
+  
   def new
     @user = User.new 
   end
+
   def create
-
     @user = User.new
-    @user.email = params[:user][:email]
-    @user.password = params[:user][:password]
-
+    # @user.email = params[:user][:email]
+    # @user.password = params[:user][:password]
+    @user.email = params[:email]
+    @user.password = params[:password]
+    password_cont = params[:password_confirmation]
+    
     if @user.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"
@@ -20,7 +24,6 @@ class UsersController < ApplicationController
 
       @errors = @user.errors.full_messages
       render :new
-
     end
   end
 
