@@ -6,9 +6,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    @user.email = params[:user][:email]
-    @user.password = params[:user][:password]
-
+    # @user.email = params[:user][:email]
+    # @user.password = params[:user][:password]
+    @user.email = params[:email]
+    @user.password = params[:password]
+    password_cont = params[:password_confirmation]
+    
     if @user.save
       flash[:notice] = "You signed up successfully"
       flash[:color]= "valid"

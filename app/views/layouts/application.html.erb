@@ -103,12 +103,17 @@
                       <input type="password" class="input" id="user_pass_sign_conf" autocomplete="off" placeholder="Confirm password">
                       <input type="submit" id="user_sign_btn" class="button" value="Sign Up">
                     </form> -->
-                    <%= form_for @user do |f| %>
-                      <p><%= f.email_field :email, class: 'input', placeholder: "Email" %></p>
-                      <p><%= f.password_field :password, class: 'input', placeholder: "Password" %></p>
-                      <p><%= f.password_field :password_confirmation, class: 'input', placeholder: "Confirm password" %></p>
+                    <%#= form_for @user do |f| %>
+                      <!-- <p><%#= f.email_field :email, class: 'input', placeholder: "Email" %></p> -->
+                      <!-- <p><%#= f.password_field :password, class: 'input', placeholder: "Password" %></p> -->
+                      <!-- <p><%#= f.password_field :password_confirmation, class: 'input', placeholder: "Confirm password" %></p> -->
+                      <%#= f.submit "Sign Up", class: "button" %>
+                    <%= form_tag login_path do %>
+                      <p><%= text_field_tag :email, nil, class: 'input', placeholder: "Email" %></p>
+                      <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password" %></p>
+                      <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password" %></p>
                       
-                      <%= f.submit "Sign Up", class: "button" %>
+                      <button class="button">Sign Up</button>
                     <% end %><!--.signup-form-->
 
 <!--                     <div class="help-text">
