@@ -20,9 +20,9 @@ class ApiController < ApplicationController
       recipe.description = result[1]['description']
       recipe.method = result[1]['instructions']
       recipe.ingredients = result[1]['ingredients']
-      recipe.cook_time = 20
-      recipe.nbr_times_cooked = 50
-      recipe.user_rating = 3.5
+      recipe.cook_time = 15 + rand(26)
+      recipe.nbr_times_cooked = 5 + rand(146)
+      recipe.user_rating = 1 + rand(5)
       if recipe.image_url
         recipe.save
       else

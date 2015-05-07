@@ -28,7 +28,11 @@ var recipeDetail = {
 
     addToFullCard('cook-time small-4 medium-4 large-4 columns', "Cook: " + recipe['cook_time'] + " mins");
     addToFullCard('nbr-cooked small-4 medium-4 large-4 columns', "Rated " + recipe['nbr_times_cooked'] + " times");
-    addToFullCard('rating small-4 medium-4 large-4 columns', recipe['user_rating'] + " stars");
+    
+    
+    var fullStars = Array(Math.round(recipe['user_rating'])+1).join('★');
+    var emptyStars = Array(5-Math.round(recipe['user_rating'])+1).join('☆');
+    addToFullCard('rating small-4 medium-4 large-4 columns', fullStars + emptyStars);
     
     $('#recipe-detail').html($fullCard);
     $('.full-close-btn').on('click', recipeDetail.close);
