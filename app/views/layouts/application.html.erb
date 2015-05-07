@@ -96,30 +96,18 @@
 
                 <div class="tabs-content">
                   <div id="signup-tab-content" class="active">
-<!--                     <form class="signup-form" action="" method="post">
-                      <input type="email" class="input" id="user_email_sign" autocomplete="off" placeholder="Email">
-                      <input type="text" class="input" id="user_name" autocomplete="off" placeholder="Username">
-                      <input type="password" class="input" id="user_pass_sign" autocomplete="off" placeholder="Password">
-                      <input type="password" class="input" id="user_pass_sign_conf" autocomplete="off" placeholder="Confirm password">
-                      <input type="submit" id="user_sign_btn" class="button" value="Sign Up">
-                    </form> -->
-                    <%#= form_for @user do |f| %>
-                      <!-- <p><%#= f.email_field :email, class: 'input', placeholder: "Email" %></p> -->
-                      <!-- <p><%#= f.password_field :password, class: 'input', placeholder: "Password" %></p> -->
-                      <!-- <p><%#= f.password_field :password_confirmation, class: 'input', placeholder: "Confirm password" %></p> -->
-                      <%#= f.submit "Sign Up", class: "button" %>
-                    <%= form_tag login_path do %>
+                    <%= form_tag users_path do %>
                       <p><%= text_field_tag :email, nil, class: 'input', placeholder: "Email" %></p>
-                      <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password" %></p>
-                      <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password" %></p>
+                      <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password", type: 'password' %></p>
+                      <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password", type: 'password' %></p>
                       
                       <button class="button">Sign Up</button>
                     <% end %><!--.signup-form-->
 
-<!--                     <div class="help-text">
+                     <div class="help-text">
                       <p>By signing up, you agree to our</p>
                       <p><a href="#">Terms of service</a></p>
-                    </div> --><!--.help-text-->
+                    </div><!--.help-text-->
                   </div><!--.signup-tab-content-->
 
                   <div id="login-tab-content">
@@ -130,25 +118,15 @@
                       <%= f.submit "Login", class: "button" %>
                     <% end %><!--.login-form-->
 
-<!--                     <div class="help-text">
-                      <p><a href="#">Forget your password?</a></p>
-                    </div> --><!--.help-text-->
+                    <div class="help-text">
+                      <p><a href="#">Forgot your password?</a></p>
+                    </div><!--.help-text-->
                   </div><!--.login-tab-content-->
                 </div><!--.tabs-content-->
               </div><!--.form-wrap-->
           </div><!--.modal-inner-->
         </div><!--.modal-fade-screen-->
       </div><!--.modal-->
-
-
-<!--                     <form class="login-form" action="" method="post">
-                      <input type="text" class="input" id="user_email_login" autocomplete="off" placeholder="Email">
-                      <input type="password" class="input" id="user_pass_login" autocomplete="off" placeholder="Password">
-                      <input type="checkbox" class="checkbox" id="remember_me">
-                      <label for="remember_me">Remember me</label>
-
-                      <input type="submit" id="user_login_btn" class="button" value="Login">
-                    </form> --><!--.login-form-->
 
 <!-- END SIGN-UP / LOGIN MODAL -->
 
