@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 // ----------- Search slide -----------
 function searchToggle() {
-  $('.phils-magic-search').slideToggle(300);
+  $('.search-wrapper').slideToggle(300);
 }
 
 function toggleSearchTerm() {
@@ -70,12 +70,12 @@ function toggleSearchIconStyle() {
 }
 
 $(document).ready(function() {
-  $('.phils-magic-search').hide();
-  $('.phils-magic-button').on('click', searchToggle);
-  $('.phils-magic-search-img').on('click', toggleSearchTerm);
-  $('.phils-magic-search-img').on('click', toggleSearchIconStyle);
-  $('.phils-magic-go').on('click', applyFilters.getFilterShowRecipes);
-  $('.phils-magic-go').on('click', searchToggle);
+  $('.search-wrapper').hide();
+  $('.search-dropdown').on('click', searchToggle);
+  $('.search-img').on('click', toggleSearchTerm);
+  $('.search-img').on('click', toggleSearchIconStyle);
+  $('.search-execute').on('click', applyFilters.getFilterShowRecipes);
+  $('.search-execute').on('click', searchToggle);
 });
 // ------------------------------------
 
