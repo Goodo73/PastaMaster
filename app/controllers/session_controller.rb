@@ -15,9 +15,10 @@ class SessionController < ApplicationController
 
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      redirect_to root_path
+      # redirect_to root_path
+      render :json => { msg: [0, '']}
     else
-      render :new
+      render :json => { msg: [1,'Invalid email and/or password. Please try again.']}
     end
   end
 
