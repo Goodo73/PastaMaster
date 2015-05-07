@@ -8,9 +8,11 @@ class ApiController < ApplicationController
   def addRecipe
 
     params['results'].each do |result|
-      recipe = Recipe.create()
+      recipe = Recipe.new
       recipe.title = result[1]['name']
-      if result[1]['images'] # deal with ridiculous image nesting
+      if result[1]['images'] &&
+        result[1]['images'].values.first["large_image_path"] != '/photos/large/missing.png'
+        # deal with ridiculous image nesting
         recipe.image_url = result[1]['images'].values.first["large_image_path"]
       else
         recipe.image_url = nil # for recipes with no images
@@ -21,7 +23,11 @@ class ApiController < ApplicationController
       recipe.cook_time = 20
       recipe.nbr_times_cooked = 50
       recipe.user_rating = 3.5
-      recipe.save
+      if recipe.image_url
+        recipe.save
+      else
+        next
+      end
     end
 
     redirect_to root_path # lol this don't work no good

@@ -69,20 +69,26 @@ var applyFilters = {
     windowSizeCheck();
   },
   render: function(recipe) {
+    $divCard = $('<div>').addClass('card');
 
     $img = $('<img>').attr('src', recipe['image_url']);
     $divImg = $('<div>').addClass('card-image').append($img);
+    $divCard.append($divImg);
 
     $divHeader = $('<div>').addClass('card-header').append(recipe['title']);
+    $divCard.append($divHeader);
 
     $p = $('<p>').html(recipe['description']);
     $divCopy = $('<div>').addClass('card-copy').append($p);
 
-    $divCard = $('<div>').addClass('card');
-    $divCard.attr('data-id',recipe['id'])
-    $divCard.append($divImg);
-    $divCard.append($divHeader);
+    $p = $('<p>').html('See full recipe');
+    $divFull = $('<div>').addClass('card-see-full').append($p);
+    $divFull.on('click', expandFullScreenView);
+    $divCopy.append($divFull);    
+
     $divCard.append($divCopy);
+
+    $divCard.attr('data-id',recipe['id'])
 
     $('.cards').append($divCard);
   }
