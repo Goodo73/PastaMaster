@@ -20,39 +20,9 @@
 //= require search_filters
 //= require recipe_detail
 
-
-
-// ------ Animation for header ------
-$(document).ready(function() {
-  var menuToggle = $('#js-mobile-menu').unbind();
-  $('#js-navigation-menu').removeClass("show");
-
-  var userToggle = $('#js-mobile-user').unbind();
-  $('#js-navigation-user').removeClass("show");
-
-  menuToggle.on('click', function(e) {
-    e.preventDefault();
-    $('#js-navigation-menu').slideToggle(function(){
-      if($('#js-navigation-menu').is(':hidden')) {
-        $('#js-navigation-menu').removeAttr('style');
-      }
-    });
-  });
-
-  userToggle.on('click', function(e) {
-    e.preventDefault();
-    $('#js-navigation-user').slideToggle(function(){
-      if($('#js-navigation-user').is(':hidden')) {
-        $('#js-navigation-user').removeAttr('style');
-      }
-    });
-  });
-});
-//  ---------------------------------
-
-
 // ----------- Search slide -----------
 function searchToggle() {
+  $(document).scrollTop(0);
   $('.search-wrapper').slideToggle(300);
 }
 
@@ -74,6 +44,7 @@ $(document).ready(function() {
   $('.search-wrapper').hide();
   $('.search-dropdown').on('click', searchToggle);
   $('.search-img').on('click', toggleSearchTerm);
+  $('.search-execute').off('click', toggleSearchTerm);
   $('.search-img').on('click', toggleSearchIconStyle);
   $('.search-execute').on('click', applyFilters.getFilterShowRecipes);
   $('.search-execute').on('click', searchToggle);
@@ -99,7 +70,7 @@ function expandFullScreenView() {
     url: '/api/recipes/' + $(this).parent().parent()[0]['dataset']['id'],
     dataType: 'json'
   }).done(function(data) {
-    recipeDetail.scroll = $(window).scrollTop();
+    recipeDetail.scroll = $(window).scrollTop(0);
     recipeDetail.render(data);
     recipeDetail.displayDetailed();
   });

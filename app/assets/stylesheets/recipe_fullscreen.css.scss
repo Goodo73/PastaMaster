@@ -1,8 +1,9 @@
 #recipe-detail {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
   z-index: 38921750389175;
   width: 100vw;
   min-height: 100vh;
@@ -11,11 +12,12 @@
   background: #E3DCDC;
   font-weight: 300;
   font-family: 'Roboto', sans-serif;
+  overflow-y: scroll;
 }
 
 .full-close-btn {
   position: fixed;
-  top: 13vh;
+  top: 3vh;
   right: 3vw;
   background: #2e2e2e;
   margin: 0;
@@ -71,10 +73,13 @@ h5 {
 
 .large-12 {
   background-color: #BABCBC;
+  overflow: hidden;
 }
 .large-6 {
   background-color: #E3DCDC;
+  overflow: hidden;
 }
 .large-4 {
   background-color: #BABCBC;
+  overflow: hidden;
 }
