@@ -11,6 +11,8 @@ header {
   background-color: $header-background;
   border-bottom: 10px solid $header-trim;
   color: $header-font-color;
+  height: 15vh;
+  width: 100vw;
 }
 
 .header-content {
@@ -28,27 +30,41 @@ header {
     line-height: 1.4em;
     margin-top: 0.35em;
     margin-bottom: 0.35em;
+
+    @media (max-width: 440px) {
+      font-size: 1.5em;
+      line-height: 2.5em;
+    }
   }
 }
 
-.header-accountlogo, .header-searchlogo {
+.header-content {
   float: right;
 }
 
-.header-searchlogo {
-  margin-right: 10px;
+.header-searchlogo, .header-accountlogo {
+  display: inline-block;
+  margin-right: -10px;
+  @media (min-width: 440px) {
+    margin-right: 10px;
+  }
 }
 
 .search-dropdown, .modal-trigger {
   height: 1.6em;
   opacity: 1.0;
   padding: 2.5vh;
+  
+  @media (max-width: 440px) {
+    padding-top: 1vh;
+  }
 
   &:focus,
   &:hover {
     opacity: 0.5;
   }
 }
+
 
 .search-dropdown {
   display: inline-block;
@@ -72,13 +88,26 @@ header {
 
 // SEARCH ELEMENTS
 .search-img {
-  margin: 0.5vh 0.5vw;
+  margin: 0.25vh 0.25vw;
   padding: 0;
   height: 6.5vw;
   width: 6.5vw;
-  // border: 1vw solid rgb(255, 110, 110);
+  border: 1vw solid rgb(255, 110, 110);
   background-color: rgb(255, 110, 110);
   border-radius: 10px;
+  @media (max-width: 440px) {
+    width: 23vw;
+    height: 23vw;
+  }
+}
+
+.search-execute {
+  box-shadow: none;
+  width: 10vw;
+  @media (max-width: 440px) {
+    width: 99vw;
+    height: 23vw;
+  }
 }
 
 .search-wrapper {
@@ -88,20 +117,17 @@ header {
 }
 
 .icon-selected {
-  background-color: rgba(255, 110, 110, 0.8);
+  background-color: rgb(255, 155, 155);
+  border: 1vw solid rgb(255, 155, 155);
 }
 
 .search-dropdown * {
-  // line-height: 11vh;
+  line-height: 11vh;
 }
 
-.search-execute {
-  display: inline-block;
-  float: right;
-}
 // END SEARCH ELEMENTS
 
 .header-spacer {
-  /*margin-bottom: 10.5vh;*/
-  margin-bottom: 6.6em;
+  margin-bottom: 15.2vh;
+  /*margin-bottom: 6.6em;*/
 }

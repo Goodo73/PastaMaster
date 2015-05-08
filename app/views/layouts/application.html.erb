@@ -14,73 +14,77 @@
 
 <!-- HEADER -->
   <header>
-    <div class="header-content">
-      <div class="header-logo">
-        <h1>PASTA MASTA</h1>
-      </div>
+    <div class="header-logo">
+      <h1>PASTA MASTA</h1>
+    </div>
 
+    <div class="header-content">
       <div class="header-searchlogo">
         <div class="search-dropdown"><%= icon('fa fa-search fa-3x', class: "search-icon") %></div>
       </div>
+
+      <div class="header-accountlogo">
+        <div class="modal">
+          <label for="modal-1">
+            <div class="modal-trigger">
+              <%= icon('fa fa-user fa-4x', class: "sign-up") %>
+            </div>
+          </label>
+          <input class="modal-state" id="modal-1" type="checkbox" />
+          <div class="modal-fade-screen">
+            <div class="modal-inner">
+              <div class="modal-close" for="modal-1"></div>
+
+              <!-- SIGN-UP / LOGIN FORMS -->
+              <div class="form-wrap">
+                <div class="tabs">
+                  <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
+                  <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
+                </div><!--.tabs-->
+
+                <div class="tabs-content">
+                  <div id="login-tab-content" class="active">
+                    <%= form_for :session, remote: true, url: login_path, html: { id: 'login-form'} do |f| %>
+                      <p><%= f.email_field :email, class: 'input', placeholder: "Email" %></p>
+                      <p><%= f.password_field :password, class: 'input', placeholder: "Password" %></p>
+                      
+                      <%= f.submit "Login", class: "button" %>
+                    <% end %><!--.login-form-->
+
+                    <div class="invalid-login">
+                      <p>Your email and/or password were invalid. Please try again.</p>
+                    </div><!--.invalid-login-->
+
+                    <div class="help-text">
+                      <p><a href="#">Forgot your password?</a></p>
+                    </div><!--.help-text-->
+                  </div><!--.login-tab-content-->
+
+                  <div id="signup-tab-content">
+                    <%= form_tag users_path do %>
+                      <p><%= text_field_tag :email, nil, class: 'input', placeholder: "Email" %></p>
+                      <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password", type: 'password' %></p>
+                      <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password", type: 'password' %></p>
+                      
+                      <p><%= submit_tag 'Sign Up', class: 'button' %></p>
+                    <% end %><!--.signup-form-->
+
+                    <div class="help-text">
+                      <p>By signing up, you agree to our</p>
+                      <p><a href="#">Terms of service</a></p>
+                    </div><!--.help-text-->
+                  </div><!--.signup-tab-content-->
+                </div><!--.tabs-content-->
+              </div><!--.form-wrap-->
+              <!-- END SIGN-UP / LOGIN FORMS -->
+
+            </div><!--.modal-inner-->
+          </div><!--.modal-fade-screen-->
+        </div><!--.modal-->
+
+
+      </div><!--.header-accountlogo-->
     </div><!--.header-content-->
-
-    <div class="header-accountlogo">
-      <div class="modal">
-        <label for="modal-1">
-          <div class="modal-trigger">
-            <%= icon('fa fa-user fa-4x', class: "sign-up") %>
-          </div>
-        </label>
-        <input class="modal-state" id="modal-1" type="checkbox" />
-        <div class="modal-fade-screen">
-          <div class="modal-inner">
-            <div class="modal-close" for="modal-1"></div>
-
-            <!-- SIGN-UP / LOGIN FORMS -->
-            <div class="form-wrap">
-              <div class="tabs">
-                <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
-                <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
-              </div><!--.tabs-->
-
-              <div class="tabs-content">
-                <div id="login-tab-content" class="active">
-                  <%= form_for :session, remote: true, url: login_path, html: { id: 'login-form'} do |f| %>
-                    <p><%= f.email_field :email, class: 'input', placeholder: "Email" %></p>
-                    <p><%= f.password_field :password, class: 'input', placeholder: "Password" %></p>
-                    
-                    <%= f.submit "Login", class: "button" %>
-                  <% end %><!--.login-form-->
-
-                  <div class="help-text">
-                    <p><a href="#">Forgot your password?</a></p>
-                  </div><!--.help-text-->
-                </div><!--.login-tab-content-->
-
-                <div id="signup-tab-content">
-                  <%= form_tag users_path do %>
-                    <p><%= text_field_tag :email, nil, class: 'input', placeholder: "Email" %></p>
-                    <p><%= text_field_tag :password, nil, class: 'input', placeholder: "Password", type: 'password' %></p>
-                    <p><%= text_field_tag :password_confirmation, nil, class: 'input', placeholder: "Confirm password", type: 'password' %></p>
-                    
-                    <p><%= submit_tag 'Sign Up', class: 'button' %></p>
-                  <% end %><!--.signup-form-->
-
-                  <div class="help-text">
-                    <p>By signing up, you agree to our</p>
-                    <p><a href="#">Terms of service</a></p>
-                  </div><!--.help-text-->
-                </div><!--.signup-tab-content-->
-              </div><!--.tabs-content-->
-            </div><!--.form-wrap-->
-            <!-- END SIGN-UP / LOGIN FORMS -->
-
-          </div><!--.modal-inner-->
-        </div><!--.modal-fade-screen-->
-      </div><!--.modal-->
-
-
-    </div><!--.header-accountlogo-->
   </header>
 
 
@@ -104,7 +108,7 @@
       <img class="search-img" data-filter="cream" src="/assets/icons/cream.svg" alt="cream">
       <img class="search-img" data-filter="salad" src="/assets/icons/salad.svg" alt="salad">
       <img class="search-img" data-filter="bake" src="/assets/icons/bake.svg" alt="bake">
-      <button class="search-execute">exec</button>
+      <button class="search-execute search-img">Go!</button>
   </div>
 
   
@@ -177,6 +181,19 @@
 </footer>
 
 <!-- END FOOTER -->
+
+<script>
+  $('#login-form').on('ajax:success', function(event, data) {
+    if (data.msg[0] === 0) {
+      $('.invalid-login').hide();
+      // success, so close modal / show home page
+      $(".modal-state:checked").prop("checked", false).change();
+    } else {
+      $('.invalid-login').show();
+    }
+  });
+</script>
+
 
 </body>
 </html>
