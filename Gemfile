@@ -59,3 +59,4 @@ group :development, :test do
   gem 'pry'
 end
 
+gem 'rails_12factor', group: :production
