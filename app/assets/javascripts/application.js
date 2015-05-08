@@ -97,7 +97,17 @@ $(document).ready(function() {
 $(function() {
   $("#modal-1").on("change", function() {
     if ($(this).is(":checked")) {
-      $("body").addClass("modal-open");
+      if ($('#user-icon > i').hasClass('fa-user')) {
+
+        $("body").addClass("modal-open");
+
+      } else {
+        // Change the sign-out icon to user icon
+        $('#user-icon > i').removeClass('fa-sign-out').addClass('fa-user');
+
+        // Stop the modal from appearing
+        $(".modal-state:checked").prop("checked", false).change();
+      }
     } else {
       $("body").removeClass("modal-open");
     }
