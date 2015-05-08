@@ -83,3 +83,16 @@ h5 {
   background-color: #BABCBC;
   overflow: hidden;
 }
+
+.star-selected {
+  color: gold;
+}
+
+.star-1:hover,
+.star-2:hover,
+.star-3:hover,
+.star-4:hover,
+.star-5:hover {
+  color: gold;
+}
+
