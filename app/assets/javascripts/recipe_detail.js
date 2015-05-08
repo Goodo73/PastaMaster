@@ -32,9 +32,38 @@ var recipeDetail = {
     
     var fullStars = Array(Math.round(recipe['user_rating'])+1).join('★');
     var emptyStars = Array(5-Math.round(recipe['user_rating'])+1).join('☆');
-    addToFullCard('rating small-4 medium-4 large-4 columns', fullStars + emptyStars);
+    var starArray = (fullStars + emptyStars).split("");
+    var count = 0;
+    starArray = $.map(starArray, function(star) {
+      count++;
+      return "<span class='star-" + count + "'>" + star + "</span>";
+    });
+
+    addToFullCard('rating small-4 medium-4 large-4 columns', starArray.join(""));    
     
     $('#recipe-detail').html($fullCard);
+
+    $('.star-1').on('click', starRating.star1Rate);
+
+    $('.star-2').on('click', starRating.star1Rate);
+    $('.star-2').on('click', starRating.star2Rate);
+    
+    $('.star-3').on('click', starRating.star1Rate);
+    $('.star-3').on('click', starRating.star2Rate);
+    $('.star-3').on('click', starRating.star3Rate);
+    
+    $('.star-4').on('click', starRating.star1Rate);
+    $('.star-4').on('click', starRating.star2Rate);
+    $('.star-4').on('click', starRating.star3Rate);
+    $('.star-4').on('click', starRating.star4Rate);
+    
+    $('.star-5').on('click', starRating.star1Rate);
+    $('.star-5').on('click', starRating.star2Rate);
+    $('.star-5').on('click', starRating.star3Rate);
+    $('.star-5').on('click', starRating.star4Rate);
+    $('.star-5').on('click', starRating.star5Rate);   
+
+
     $('.full-close-btn').on('click', recipeDetail.close);
 
   },
@@ -49,3 +78,48 @@ var recipeDetail = {
     $(window).scrollTop(recipeDetail.scroll);
   }
 };
+
+var starRating = {
+  disableRatings: function() {
+    $('.star-1').off('click', starRating.star1Rate);
+
+    $('.star-2').off('click', starRating.star1Rate);
+    $('.star-2').off('click', starRating.star2Rate);
+    
+    $('.star-3').off('click', starRating.star1Rate);
+    $('.star-3').off('click', starRating.star2Rate);
+    $('.star-3').off('click', starRating.star3Rate);
+    
+    $('.star-4').off('click', starRating.star1Rate);
+    $('.star-4').off('click', starRating.star2Rate);
+    $('.star-4').off('click', starRating.star3Rate);
+    $('.star-4').off('click', starRating.star4Rate);
+    
+    $('.star-5').off('click', starRating.star1Rate);
+    $('.star-5').off('click', starRating.star2Rate);
+    $('.star-5').off('click', starRating.star3Rate);
+    $('.star-5').off('click', starRating.star4Rate);
+    $('.star-5').off('click', starRating.star5Rate);  
+  },
+  star1Rate: function() {
+    $('.star-1').addClass('star-selected');
+    $('.star-1').html('★');
+    starRating.disableRatings();
+  },
+  star2Rate: function() {
+    $('.star-2').addClass('star-selected');
+    $('.star-2').html('★');
+  },
+  star3Rate: function() {
+    $('.star-3').addClass('star-selected');
+    $('.star-3').html('★');
+  },
+  star4Rate: function() {
+    $('.star-4').addClass('star-selected');
+    $('.star-4').html('★');
+  },
+  star5Rate: function() {
+    $('.star-5').addClass('star-selected');
+    $('.star-5').html('★');
+  }
+}
