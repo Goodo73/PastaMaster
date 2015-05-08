@@ -22,7 +22,7 @@
 
 // ----------- Search slide -----------
 function searchToggle() {
-  $(window).scrollTop();
+  $(document).scrollTop(0);
   $('.search-wrapper').slideToggle(300);
 }
 
@@ -70,7 +70,7 @@ function expandFullScreenView() {
     url: '/api/recipes/' + $(this).parent().parent()[0]['dataset']['id'],
     dataType: 'json'
   }).done(function(data) {
-    recipeDetail.scroll = $(window).scrollTop();
+    recipeDetail.scroll = $(window).scrollTop(0);
     recipeDetail.render(data);
     recipeDetail.displayDetailed();
   });
