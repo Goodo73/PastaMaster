@@ -113,3 +113,13 @@ body {
     .form-wrap .help-text p {
       text-align: center;
       font-size: 14px; }
+  .form-wrap .invalid-login {
+    margin-top: .6em;
+    display: none;
+    
+    p {
+      text-align: center;
+      font-size: 14px;
+      color: red;
+    }
+  }

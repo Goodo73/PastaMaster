@@ -3,9 +3,7 @@ class SessionController < ApplicationController
   #login form
   def new
     if logged_in?
-      redirect_to root_path
-
-      
+      redirect_to root_path      
     end
   end
 
@@ -16,9 +14,9 @@ class SessionController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       # redirect_to root_path
-      render :json => { msg: [0, '']}
+      render :json => { msg: [0, "You've successfully logged in."]}
     else
-      render :json => { msg: [1,'Invalid email and/or password. Please try again.']}
+      render :json => { msg: [1,"Your email and/or password were invalid. Please try again."]}
     end
   end
 
