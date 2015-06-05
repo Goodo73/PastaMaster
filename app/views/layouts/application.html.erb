@@ -27,7 +27,11 @@
         <div class="modal">
           <label for="modal-1">
             <div id="user-icon" class="modal-trigger">
-              <%= icon('fa fa-user fa-4x', class: "sign-up") %>
+              <% if logged_in? %>
+                <%= icon('fa fa-sign-out fa-4x') %>
+              <% else %>
+                <%= icon('fa fa-user fa-4x') %>
+              <% end %>
             </div>
           </label>
           <input class="modal-state" id="modal-1" type="checkbox" />

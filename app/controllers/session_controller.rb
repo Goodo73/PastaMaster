@@ -13,8 +13,7 @@ class SessionController < ApplicationController
 
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      # redirect_to root_path
-      render :json => { msg: [0, "You've successfully logged in."]}
+      render :json => { msg: [0,"You've successfully logged in."]}
     else
       render :json => { msg: [1,"Your email and/or password were invalid. Please try again."]}
     end
@@ -23,7 +22,7 @@ class SessionController < ApplicationController
   # logging out 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    render :json => {}
   end
 
 end

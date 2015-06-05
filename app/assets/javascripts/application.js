@@ -102,11 +102,19 @@ $(function() {
         $("body").addClass("modal-open");
 
       } else {
-        // Change the sign-out icon to user icon
-        $('#user-icon > i').removeClass('fa-sign-out').addClass('fa-user');
+        // Log the user out
+        var logoutParms = {
+          url: "/logout",
+          type: "delete"
+        };
 
-        // Stop the modal from appearing
-        $(".modal-state:checked").prop("checked", false).change();
+        $.ajax(logoutParms).done(function(data) {
+          // Change the sign-out icon to user icon
+          $('#user-icon > i').removeClass('fa-sign-out').addClass('fa-user');
+
+          // Stop the modal from appearing
+          $(".modal-state:checked").prop("checked", false).change();
+        })
       }
     } else {
       $("body").removeClass("modal-open");
