@@ -1,7 +1,11 @@
-$header-background: #818181;
-$header-trim: #EB8E60;
+$header-background: #fff;
+$header-trim: #8dc63f;
 $header-font-color: white;
 
+
+.search-icon, .sign-up {
+  color: #707070;
+}
 header {
   position: fixed;
   top: 0;
@@ -11,19 +15,36 @@ header {
   background-color: $header-background;
   border-bottom: 10px solid $header-trim;
   color: $header-font-color;
-  height: 15vh;
+  height: 10vh;
   width: 100vw;
 }
 
+.img-logo {
+  margin-top: 25px;
+  margin-left: 50px;
+
+  @media (max-width: 440px) {
+    margin-left: 0px;
+  }
+
+}
+
 .header-content {
+  margin-right: 50px;
   display: inline;
   height: 5vh;
+
+  @media (max-width: 440px) {
+    margin-right: 10px;
+  }
+
 }
 
 .header-logo {
   float: left;
   display: block;
   margin-left: 10px;
+
 
   h1 {
     font-family: roboto;
@@ -48,6 +69,7 @@ header {
 .header-searchlogo, .header-accountlogo {
   display: inline-block;
   margin-right: -10px;
+  margin-top: -27px;
   @media (min-width: 440px) {
     margin-right: 10px;
   }

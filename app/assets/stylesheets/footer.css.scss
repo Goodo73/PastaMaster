@@ -35,8 +35,8 @@
   $small-screen: em(440) !default;
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
-  $footer-background: #818181;
-  $footer-trim: #EB8E60;
+  $footer-background: #333333;
+  $footer-trim: #8dc63f;
   $footer-color: white;
 
   background: $footer-background;
@@ -47,9 +47,12 @@
   
   .modal-trigger {
     color: white;
+    font-weight: 550;
+    font-size: 16px;
   }
 
   .footer-primary-links > ul {
+    margin-top: 1%;
     text-align: center;
   }
 
@@ -118,8 +121,6 @@
     color: $footer-color;
     text-decoration: none;
     
-
-
     &:focus,
     &:hover {
       color: transparentize($footer-color, 0.5);
@@ -206,6 +207,10 @@
 
 }
 
-  .footer-social img {
-    max-height: 2.5em;
-  }
+.footer-social img {
+  max-height: 2.5em;
+}
+
+.modal-trigger {
+  padding: 0;
+}
